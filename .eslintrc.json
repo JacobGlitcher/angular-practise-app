@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@angular-eslint/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@angular-eslint/template/process"
+      ],
+      "rules": {
+        "@angular-eslint/consistent-type-assertions": "error",
+        "@angular-eslint/directive-lifecycle-call": "off",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/ban-types": ["error", { "types": ["any"] }],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-shadow": "error",
+        "prettier/prettier": "warn"
+      }
+    }
+  ]
+}
